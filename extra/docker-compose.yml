@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db:
+    build: ./db
+    environment:
+      PG_PASSWORD: password
+      PG_USER: docker
+    ports:
+      - 5432:5432
+
+  api:
+    build: ./api
+    environment:
+      PG_USER: docker
+      PG_PASSWORD: password
